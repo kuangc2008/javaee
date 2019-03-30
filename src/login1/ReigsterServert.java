@@ -3,14 +3,18 @@ package login1;
 import com.mysql.cj.xdevapi.SqlStatement;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 public class ReigsterServert extends HttpServlet {
-
+    public static final String TIME = "time";
 
     @Override
     public void init() throws ServletException {
@@ -53,7 +57,25 @@ public class ReigsterServert extends HttpServlet {
                 ResultSet set2 = preparedStatement2.executeQuery();
                 resp.setHeader("Content-Type", "text/html; charset=UTF-8");
                 if (set2.next()) {
-                    resp.getWriter().write("登陆成功啦");
+//                    resp.getWriter().write("登陆成功啦");
+
+
+                    String cookie = "a";
+                    Cookie[] cookies = req.getCookies();
+                    String time = "";
+                    for (Cookie c : cookies) {
+                        if (c.getName().equals(ReigsterServert.TIME)) {
+                            time = c.getValue();
+                        }
+                    }
+                    DateFormat ftf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    if (time != null && !time.equals("")) {
+                        req.setAttribute(TIME, ftf.format(Long.parseLong(time)));
+                    }
+
+
+                    req.getRequestDispatcher("/login1/login_scrress.jsp").forward(req, resp);
+
                 } else {
                     resp.getWriter().write("登陆失败啦");
                 }
@@ -77,7 +99,7 @@ public class ReigsterServert extends HttpServlet {
                 }
 
                 }
-            } catch(SQLException e){
+            } catch(Exception e){
                 e.printStackTrace();
 
                 resp.getWriter().write("register failture<br>" + e.getStackTrace().toString());
