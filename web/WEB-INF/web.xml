@@ -48,4 +48,16 @@
         <servlet-name>login333</servlet-name>
         <url-pattern>/login1/login333</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>sessiondemo</servlet-name>
+        <servlet-class>session.SessionDemoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sessiondemo</servlet-name>
+        <url-pattern>/session/SessionDemoServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
