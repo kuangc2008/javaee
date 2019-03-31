@@ -1,6 +1,4 @@
-package login1;
-
-import com.mysql.cj.xdevapi.SqlStatement;
+package _001login1;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -11,7 +9,6 @@ import java.io.IOException;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 
 public class ReigsterServert extends HttpServlet {
     public static final String TIME = "time";
@@ -74,7 +71,7 @@ public class ReigsterServert extends HttpServlet {
                     }
 
 
-                    req.getRequestDispatcher("/login1/login_scrress.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/_001login1/login_scrress.jsp").forward(req, resp);
 
                 } else {
                     resp.getWriter().write("登陆失败啦");
