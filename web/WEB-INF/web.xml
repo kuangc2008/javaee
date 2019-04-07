@@ -60,4 +60,15 @@
         <url-pattern>/_002session/SessionDemoServlet</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>004stream</servlet-name>
+        <servlet-class>_004stream.StreamServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>004stream</servlet-name>
+        <url-pattern>/004stream/streamtest</url-pattern>
+    </servlet-mapping>
+
 </web-app>
