@@ -1,5 +1,7 @@
 package databases;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -106,6 +108,7 @@ public class CstCustomerEntity {
     }
 
     @OneToMany(mappedBy = "cstCustomerByLkmCustId")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     public Collection<CstLinkmanEntity> getCstLinkmenByCustId() {
         return cstLinkmenByCustId;
     }

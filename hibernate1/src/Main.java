@@ -59,5 +59,12 @@ public class Main {
 
 
 
+        final Session session = getSession();
+        UserEntity userEntity = session.get(UserEntity.class, 19);
+        session.close();
+
+        System.out.println("userEn-->" + userEntity);
+
+
     }
 }
