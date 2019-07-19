@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>javatest</groupId>
-    <artifactId>javatest</artifactId>
+    <groupId>_01_01_javatest</groupId>
+    <artifactId>_01_01_javatest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
