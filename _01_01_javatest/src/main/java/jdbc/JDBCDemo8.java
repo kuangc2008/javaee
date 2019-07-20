@@ -28,9 +28,10 @@ public class JDBCDemo8 {
         List<Emp> list = null;
         try {
             //1.注册驱动
-            Class.forName("com.mysql.jdbc.Driver");
+//            Class.forName("com.mysql.jdbc.Driver");
             //2.获取连接
-            conn = DriverManager.getConnection("jdbc:mysql://10.18.71.118/db4", "root", "root");
+//            conn = DriverManager.getConnection("jdbc:mysql://10.18.71.118/db4", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db4", "root", "rootroot");
             //3.定义sql
             String sql = "select * from emp2";
             //4.获取执行sql的对象
@@ -40,7 +41,7 @@ public class JDBCDemo8 {
             //6.遍历结果集，封装对象，装载集合
             Emp emp = null;
             list = new ArrayList<Emp>();
-            while(rs.next()){
+            while (rs.next()) {
                 //获取数据
                 int id = rs.getInt("id");
                 String ename = rs.getString("ename");
@@ -64,9 +65,6 @@ public class JDBCDemo8 {
                 //装载集合
                 list.add(emp);
             }
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {

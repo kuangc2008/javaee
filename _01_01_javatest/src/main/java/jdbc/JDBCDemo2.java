@@ -18,7 +18,8 @@ public class JDBCDemo2 {
             //2. 定义sql
             String sql = "insert into emp2 values(null,'三万',4000,3, '2009-10-11', 9.9, 8.9, 1)";
             //3.获取Connection对象
-            conn = DriverManager.getConnection("jdbc:mysql://10.18.71.118/db4", "root", "root");
+//            conn = DriverManager.getConnection("jdbc:mysql://10.18.71.118/db4", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db4", "root", "rootroot");
             //4.获取执行sql的对象 Statement
             stmt = conn.createStatement();
             //5.执行sql

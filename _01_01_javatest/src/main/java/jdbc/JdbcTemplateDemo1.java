@@ -14,7 +14,7 @@ public class JdbcTemplateDemo1 {
         JdbcTemplate template = new JdbcTemplate(JDBCUtils2.getDataSource());
         //3.调用方法
         String sql = "update emp2 set dept_id = 5000 where id = ?";
-        int count = template.update(sql, 4);
+        int count = template.update(sql, 1002);
         System.out.println(count);
     }
 }
