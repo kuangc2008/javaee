@@ -16,6 +16,10 @@ public class MybatisTest {
     @Test
     public void testFindALl() throws IOException {
         //1.读取配置文件
+
+        System.out.println(Resources.getResourceAsFile("").toString());
+
+
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         //2.创建SqlSessionFactory工厂
         SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
