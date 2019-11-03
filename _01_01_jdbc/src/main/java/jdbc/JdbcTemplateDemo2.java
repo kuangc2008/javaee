@@ -72,7 +72,7 @@ public class JdbcTemplateDemo2 {
      */
     @Test
     public void test5(){
-        String sql = "select * from emp";
+        String sql = "select * from emp2";
         List<Map<String, Object>> list = template.queryForList(sql);
 
         for (Map<String, Object> stringObjectMap : list) {
@@ -139,7 +139,7 @@ public class JdbcTemplateDemo2 {
 
     @Test
     public void test7(){
-        String sql = "select count(id) from emp";
+        String sql = "select count(id) from emp2";
         Long total = template.queryForObject(sql, Long.class);
         System.out.println(total);
     }

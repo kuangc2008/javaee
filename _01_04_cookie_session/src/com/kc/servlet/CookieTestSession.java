@@ -25,8 +25,6 @@ public class CookieTestSession extends HttpServlet {
         //设置响应的消息体的数据格式以及编码
         resp.setContentType("text/html;charset=utf-8");
 
-
-
         //1.获取所有Cookie
         Cookie[] cookies = req.getCookies();
         boolean flag = false;//没有cookie为lastTime

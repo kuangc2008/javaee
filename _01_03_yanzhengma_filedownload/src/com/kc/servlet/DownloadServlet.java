@@ -1,6 +1,7 @@
 package com.kc.servlet;
 
 import com.kc.utils.DownLoadUtils;
+import com.oracle.tools.packager.Log;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 
 @WebServlet("/downloadServlet")
 public class DownloadServlet extends HttpServlet {
@@ -52,7 +54,20 @@ public class DownloadServlet extends HttpServlet {
         //2.使用工具类方法编码文件名即可
         filename = DownLoadUtils.getFileName(agent, filename);
 
-        response.setHeader("content-disposition","attachment;filename="+filename);
+
+        if(false){ //在线打开方式
+            System.out.println("realPath->" + realPath2);
+            URL u = new URL("file:///"+realPath2);
+            response.setContentType(u.openConnection().getContentType());
+            response.setHeader("Content-Disposition", "inline; filename="+(filename).getBytes("gbk"));
+            //文件名应该编码成UTF-8
+        } else { //纯下载方式
+
+            response.setContentType("application/x-msdownload");
+
+            response.setHeader("content-disposition","attachment;filename="+filename);
+        }
+
         //4.将输入流的数据写出到输出流中
         ServletOutputStream sos = response.getOutputStream();
         byte[] buff = new byte[1024 * 8];
