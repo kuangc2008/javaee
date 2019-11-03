@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findUserByUsernameAndPassword(String username, String password) {
         try {
-            String sql = "select * from user where username = ? and password = ?";
+            String sql = "select * from user3 where username = ? and password = ?";
             User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
             return user;
         } catch (Exception e) {
@@ -50,27 +50,27 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void delete(int id) {
         //1.定义sql
-        String sql = "delete from user where id = ?";
+        String sql = "delete from user3 where id = ?";
         //2.执行sql
         template.update(sql, id);
     }
 
     @Override
     public User findById(int id) {
-        String sql = "select * from user where id = ?";
+        String sql = "select * from user3 where id = ?";
         return template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), id);
     }
 
     @Override
     public void update(User user) {
-        String sql = "update user set name = ?,gender = ? ,age = ? , address = ? , qq = ?, email = ? where id = ?";
+        String sql = "update user3 set name = ?,gender = ? ,age = ? , address = ? , qq = ?, email = ? where id = ?";
         template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail(), user.getId());
     }
 
     @Override
     public int findTotalCount(Map<String, String[]> condition) {
         //1.定义模板初始化sql
-        String sql = "select count(*) from user where 1 = 1 ";
+        String sql = "select count(*) from user3 where 1 = 1 ";
         StringBuilder sb = new StringBuilder(sql);
         //2.遍历map
         Set<String> keySet = condition.keySet();
@@ -100,7 +100,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> findByPage(int start, int rows, Map<String, String[]> condition) {
-        String sql = "select * from user  where 1 = 1 ";
+        String sql = "select * from user3  where 1 = 1 ";
 
         StringBuilder sb = new StringBuilder(sql);
         //2.遍历map
