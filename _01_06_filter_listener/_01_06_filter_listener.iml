@@ -22,5 +22,7 @@
     <orderEntry type="library" name="c3p0-0.9.1.2" level="project" />
     <orderEntry type="library" name="Tomcat 9.0.17server" level="application_server_libraries" />
     <orderEntry type="library" name="jackson-annotations-2.2.3" level="project" />
+    <orderEntry type="library" name="jedis-2.7.0" level="project" />
+    <orderEntry type="library" name="commons-pool2-2.3" level="project" />
   </component>
 </module>
