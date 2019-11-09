@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  07 redis
+  07 redis 3
   </body>
 </html>

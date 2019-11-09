@@ -15,16 +15,17 @@
                 <!-- 配置连接数据库的4个基本信息 -->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/db4"/>
-                <property name="username" value="root"/>
+                <property name="username2" value="root"/>
                 <property name="password" value="rootroot"/>
             </dataSource>
         </environment>
     </environments>
 
     <!-- 指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件 -->
-    <!--<mapper resource="com/kc/dao/IUserDao.xml"/>-->
+
     <mappers>
-        <mapper class="com.kc.dao.IUserDao"/>
+        <mapper resource="com/kc/dao/IUserDao.xml"/>
+        <!--<mapper class="com.kc.dao.IUserDao"/>-->
     </mappers>
 
 

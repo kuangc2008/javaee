@@ -25,7 +25,7 @@
 <body>
 
 <form action="doLogin" method="post">
-    <input type="text" placeholder="请输入用户名" name="username"><br>
+    <input type="text" placeholder="请输入用户名" name="username2"><br>
     <input type="text" placeholder="请输入密码" name="password"><br>
 
 验证码 <input type="text" name="checkCode"> <img id="img" src="checkCodeServlet">

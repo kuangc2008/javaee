@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class User implements Serializable {
     private Integer id;
-    private String username;
+    private String username3;
     private Date birthday;
     private String sex;
     private String address;
@@ -36,12 +36,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsername3() {
+        return username3;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername3(String username3) {
+        this.username3 = username3;
     }
 
     public Date getBirthday() {
@@ -72,7 +72,7 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
+                ", username='" + username3 + '\'' +
                 ", birthday=" + birthday +
                 ", sex='" + sex + '\'' +
                 ", address='" + address + '\'' +
