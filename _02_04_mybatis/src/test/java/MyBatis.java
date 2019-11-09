@@ -1,5 +1,6 @@
 
 import com.kc.dao.IUserDao;
+import com.kc.domain.QueryVo;
 import com.kc.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -80,69 +81,69 @@ public class MyBatis {
         // 操作后会多出id
         System.out.println("保存操作之后："+user);
     }
-//
-//    /**
-//     * 测试更新操作
-//     */
-//    @Test
-//    public void testUpdate(){
-//        User user = new User();
-//        user.setUserId(50);
-//        user.setUserName("mybastis update user");
-//        user.setUserAddress("北京市顺义区");
-//        user.setUserSex("女");
-//        user.setUserBirthday(new Date());
-//
-//        //5.执行保存方法
-//        userDao.updateUser(user);
-//    }
-//
-//    /**
-//     * 测试删除操作
-//     */
-//    @Test
-//    public void testDelete(){
-//        //5.执行删除方法
-//        userDao.deleteUser(48);
-//    }
-//
-//    /**
-//     * 测试模糊查询操作
-//     */
-//    @Test
-//    public void testFindByName(){
-//        //5.执行查询一个方法
-//        List<User> users = userDao.findByName("%王%");
-////        List<User> users = userDao.findByName("王");
-//        for(User user : users){
-//            System.out.println(user);
-//        }
-//    }
-//
-//    /**
-//     * 测试查询总记录条数
-//     */
-//    @Test
-//    public void testFindTotal(){
-//        //5.执行查询一个方法
-//        int count = userDao.findTotal();
-//        System.out.println(count);
-//    }
-//
-//
-//    /**
-//     * 测试使用QueryVo作为查询条件
-//     */
-//    @Test
-//    public void testFindByVo(){
-//        QueryVo vo = new QueryVo();
-//        User user = new User();
-//        user.setUserName("%王%");
-//        vo.setUser(user);
-//        //5.执行查询一个方法
-//        List<User> users = userDao.findUserByVo(vo);
-//        for(User u : users){
-//            System.out.println(u);
-//        }
-//    }
+
+    /**
+     * 测试更新操作
+     */
+    @Test
+    public void testUpdate(){
+        User user = new User();
+        user.setId(51);
+        user.setUsername3("mybastis update user");
+        user.setAddress("北京市顺义区");
+        user.setSex("女");
+        user.setBirthday(new Date());
+
+        //5.执行保存方法
+        userDao.updateUser(user);
+    }
+
+    /**
+     * 测试删除操作
+     */
+    @Test
+    public void testDelete(){
+        //5.执行删除方法
+        userDao.deleteUser(42);
+    }
+
+    /**
+     * 测试模糊查询操作
+     */
+    @Test
+    public void testFindByName(){
+        //5.执行查询一个方法
+        List<User> users = userDao.findByName("%王%");
+//        List<User> users = userDao.findByName("王");
+        for(User user : users){
+            System.out.println(user);
+        }
+    }
+
+    /**
+     * 测试查询总记录条数
+     */
+    @Test
+    public void testFindTotal(){
+        //5.执行查询一个方法
+        int count = userDao.findTotal();
+        System.out.println(count);
+    }
+
+
+    /**
+     * 测试使用QueryVo作为查询条件
+     */
+    @Test
+    public void testFindByVo(){
+        QueryVo vo = new QueryVo();
+        User user = new User();
+        user.setUsername3("%王%");
+        vo.setUser(user);
+        //5.执行查询一个方法
+        List<User> users = userDao.findUserByVo(vo);
+        for(User u : users){
+            System.out.println(u);
+        }
+    }
 }

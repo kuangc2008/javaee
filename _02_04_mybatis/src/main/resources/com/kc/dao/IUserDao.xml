@@ -41,7 +41,7 @@
 
     <!-- 更新用户 -->
     <update id="updateUser" parameterType="USER">
-        update user set username=#{userName},address=#{userAddress},sex=#{userAex},birthday=#{userBirthday} where id=#{userId}
+        update user set username=#{username3},address=#{address},sex=#{sex},birthday=#{birthday} where id=#{id}
     </update>
 
     <!-- 删除用户-->
@@ -62,6 +62,6 @@
 
     <!-- 根据queryVo的条件查询用户 -->
     <select id="findUserByVo" parameterType="com.kc.domain.QueryVo" resultMap="userMap">
-        select * from user where username like #{user.username}
+        select * from user where username like #{user.username3}
     </select>
 </mapper>
