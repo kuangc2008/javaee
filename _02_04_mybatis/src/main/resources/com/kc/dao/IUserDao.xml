@@ -64,4 +64,46 @@
     <select id="findUserByVo" parameterType="com.kc.domain.QueryVo" resultMap="userMap">
         select * from user where username like #{user.username3}
     </select>
+
+
+
+    <!-- 根据条件查询
+   <select id="findUserByCondition" resultMap="userMap" parameterType="user">
+       select * from user where 1=1
+       <if test="userName != null">
+         and username = #{userName}
+       </if>
+       <if test="userSex != null">
+           and sex = #{userSex}
+       </if>
+   </select>-->
+
+    <select id="findUserByCondition" resultMap="userMap" parameterType="user">
+        select * from user
+        <where>
+            <if test="username3 != null">
+                and username = #{username3}
+            </if>
+            <if test="sex != null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
+
+
+    <!-- 了解的内容：抽取重复的sql语句-->
+    <sql id="defaultUser">
+        select * from user
+    </sql>
+    <!-- 根据queryvo中的Id集合实现查询用户列表 -->
+    <select id="findUserInIds" resultMap="userMap" parameterType="queryvo">
+        <include refid="defaultUser"></include>
+        <where>
+            <if test="ids != null and ids.size()>0">
+                <foreach collection="ids" open="and id in (" close=")" item="uid" separator=",">
+                    #{uid}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

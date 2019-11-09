@@ -56,4 +56,8 @@ public interface IUserDao {
      * @return
      */
     List<User> findUserByVo(QueryVo vo);
+
+    List<User> findUserByCondition(User u);
+
+    List<User> findUserInIds(QueryVo vo);
 }
