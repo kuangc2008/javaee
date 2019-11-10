@@ -28,4 +28,6 @@ public interface IUserDao {
     User findById(Integer userId);
 
     List<User>  findAllLazy();
+
+    void updateUser(User user);
 }
