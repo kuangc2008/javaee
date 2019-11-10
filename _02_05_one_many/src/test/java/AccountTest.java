@@ -68,4 +68,17 @@ public class AccountTest {
             System.out.println(au);
         }
     }
+
+    /**
+     * 测试查询所有
+     */
+    @Test
+    public void testFindAllLazy(){
+        List<Account> accounts = accountDao.findAllLazy();
+        for(Account account : accounts){
+            System.out.println("--------每个account的信息------------");
+            System.out.println(account);
+            System.out.println(account.getUser());
+        }
+    }
 }
