@@ -63,4 +63,13 @@ public class UserTest {
             System.out.println(user);
 
     }
+
+    @Test
+    public void testFindLazy(){
+        List<User> allLazy = userDao.findAllLazy();
+        for (User u : allLazy ) {
+            System.out.println("u-" +u + "a->" + u.getAccounts());
+        }
+
+    }
 }

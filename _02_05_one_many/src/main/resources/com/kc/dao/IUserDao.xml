@@ -29,4 +29,24 @@
         select * from user where id = #{uid}
     </select>
 
+
+
+
+    <!-- 定义User的resultMap-->
+    <resultMap id="userMap2" type="user">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
+        <!-- 配置角色集合的映射 -->
+        <!-- 配置user对象中accounts集合的映射 -->
+        <collection property="accounts" ofType="account" select="com.kc.dao.IAccountDao.findAccountByUid" column="id"></collection>
+    </resultMap>
+    <!-- 查询所有 -->
+    <select id="findAllLazy" resultMap="userMap2">
+        select * from user
+    </select>
+
+
 </mapper>

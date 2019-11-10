@@ -27,5 +27,5 @@ public interface IUserDao {
      */
     User findById(Integer userId);
 
-
+    List<User>  findAllLazy();
 }

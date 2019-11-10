@@ -5,7 +5,6 @@
 <configuration>
     <!-- 配置properties-->
     <properties resource="jdbcConfig.properties"></properties>
-
     <!--使用typeAliases配置别名，它只能配置domain中类的别名 -->
     <typeAliases>
         <package name="com.kc.domain"></package>

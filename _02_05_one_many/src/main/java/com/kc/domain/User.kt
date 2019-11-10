@@ -7,7 +7,7 @@ import java.util.Date
  * @author 黑马程序员
  * @Company http://www.ithiema.com
  */
-class User : Serializable {
+open class User : Serializable {
 
     var id: Int? = null
     var username: String? = null

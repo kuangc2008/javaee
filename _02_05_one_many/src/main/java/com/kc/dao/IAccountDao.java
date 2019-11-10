@@ -15,4 +15,6 @@ public interface IAccountDao {
     List<Account> findAll();
 
     List<AccountUser> findAllAccount();
+
+    List<Account> findAccountByUid(Integer uid);
 }

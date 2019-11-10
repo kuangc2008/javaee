@@ -29,4 +29,9 @@
         select a.*,u.username,u.address from account a , user u where u.id = a.uid;
     </select>
 
+
+    <select id="findAccountByUid" resultType="account">
+        select * from account where uid = #{uid}
+    </select>
+
 </mapper>
