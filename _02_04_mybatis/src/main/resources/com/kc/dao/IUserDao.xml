@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kc.dao.IUserDao">
+<mapper namespace="com.kc.com.kc.dao.IUserDao">
 
     <!-- 配置 查询结果的列名和实体类的属性名的对应关系 -->
     <resultMap id="userMap" type="com.kc.domain.User">

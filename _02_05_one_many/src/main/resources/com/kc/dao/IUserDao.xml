@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kc.dao.IUserDao">
+<mapper namespace="com.kc.com.kc.dao.IUserDao">
 
     <!--开启user支持二级缓存-->
     <cache/>
@@ -45,7 +45,7 @@
         <!-- 配置角色集合的映射 -->
         <!-- 配置user对象中accounts集合的映射 -->
         <collection property="accounts" ofType="account"
-                    select="com.kc.dao.IAccountDao.findAccountByUid"
+                    select="com.kc.com.kc.dao.IAccountDao.findAccountByUid"
                     column="id"></collection>
     </resultMap>
     <!-- 查询所有 -->
