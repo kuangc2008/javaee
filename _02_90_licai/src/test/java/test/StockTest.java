@@ -21,8 +21,8 @@ public class StockTest {
 
     private StockService in = new StockService();
 
-    int year = 2012;
-    int month = 6;
+    int year = 2001;
+    int month = 1;
     int endYear = 1;
     int endMonth = 1;
     int money = 10000;
@@ -50,10 +50,15 @@ public class StockTest {
 //        in.dingTou(2018, 6, 10000, 0.2f);
 
 
+
+
+        System.out.println("2222222");
+        in.dingTou(year, month, money, 10f);
+        in.dingTou(year, month, money, 1f);
         in.dingTou(year, month, money, 0.3f);
-        in.dingTou(year, month, money, 0.2f);
-        in.dingTou(year, month, money, 0.15f);
-        in.dingTou(year, month, money, 0.1f);
+
+        System.out.println("3333333");
+//        in.dingTou(year, month, money, 0.15f);
     }
 
 
@@ -72,9 +77,10 @@ public class StockTest {
     @Test
     public void testDingTou3(){
         in.dingTou(year, month, money, 0.3f, 3);
-        in.dingTou(year, month, money, 0.2f, 3);
-        in.dingTou(year, month, money, 0.15f, 3);
-        in.dingTou(year, month, money, 0.1f, 3);
+        in.dingTou(year, month, money, 0.3f, 1);
+//        in.dingTou(year, month, money, 0.2f, 3);
+//        in.dingTou(year, month, money, 0.15f, 3);
+//        in.dingTou(year, month, money, 0.1f, 3);
 
 
 
@@ -98,9 +104,22 @@ public class StockTest {
 //        in.dingTouMultiYear(year, month, money, 1f, 6, 0.00f);
 
 
-        in.dingTouMultiYear(year, month, money, 0.2f, 3, 0.1f, true);
-        in.dingTouMultiYear(year, month, money, 0.2f, 3, 0.1f, false);
-//        in.dingTou(year, month, money, 0.25f, 3);
+//        in.dingTouMultiYear(year, month, money, 1f, 3, 0.1f, true);
+//        in.dingTouMultiYear(year, month, money, 0.5f, 3, 0.1f, true);
+        in.dingTouMultiYear(year, month, money, 0.5f, 3, 0.1f, true);
+        in.dingTou(year, month, money, 0.5f);
+
+
+
+        in.dingTouMultiYear(year, month, money, 0.3f, 3, 0.1f, true);
+        in.dingTou(year, month, money, 0.3f);
+
+        in.dingTouMultiYear(year, month, money, 0.15f, 3, 0.1f, true);
+        in.dingTou(year, month, money, 0.15f);
+//        in.dingTouMultiYear(year, month, money, 0.2f, 3, 0.1f, true);
+//        in.dingTouMultiYear(year, month, money, 0.15f, 3, 0.1f, true);
+//        in.dingTouMultiYear(year, month, money, 0.3f, 3, 0.1f, false);
+//        in.dingTou(year, month, money, 0.3f, 3);
 
 
 
@@ -149,12 +168,12 @@ public class StockTest {
      */
     @Test
     public void testH333(){
-        in.h333_2(2016, 6, 2019, 12, money, 1f,  0,
+        in.h333_2(2008, 6, 2015, 7, money, 1f,  0,
                 0.2f, 0.15f, 0.15f,
                 0.3f, 0.3f, 0.3f);
 //        in.h333(2016, 1, 2019, 10, money, 1f,  0, 0.12f);
 
-        in.dingTou(2016, 6, money, 0.15f, 3);
+//        in.dingTou(2016, 6, money, 0.15f, 3);
     }
 
 

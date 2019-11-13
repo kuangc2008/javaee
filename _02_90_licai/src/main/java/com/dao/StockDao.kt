@@ -12,7 +12,7 @@ import java.util.*
 class StockDao {
 
     fun getAllStockNum() : ArrayList<StockDay> {
-        val data: String = FileUtils.getFromFile("/data")
+        val data: String = FileUtils.getFromFile("/500etf")
 
 
         val jsonObject = JSONObject(data)

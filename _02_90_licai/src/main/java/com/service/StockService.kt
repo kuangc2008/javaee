@@ -318,6 +318,8 @@ class StockService {
 
         var trade = Trade()
 
+        var priceEnd : Double = (-1F).toDouble()
+
         for (i in allStockNum.indices) {
             var day = allStockNum[i]
 
@@ -330,6 +332,7 @@ class StockService {
                 continue
             }
             if (endYear < day.getYear() || (endYear == day.getYear() && endMonth < day.getMonth())) {
+                priceEnd = day.startPrice
                 break
             }
 
@@ -408,7 +411,8 @@ class StockService {
             }
         }
 
-        trade.print(allStockNum.last().startPrice)
+        priceEnd = if (priceEnd > 0) priceEnd else allStockNum.last().startPrice
+        trade.print(priceEnd)
 
     }
 }
