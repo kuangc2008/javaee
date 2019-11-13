@@ -21,7 +21,7 @@ public class StockTest {
 
     private StockService in = new StockService();
 
-    int year = 2016;
+    int year = 2012;
     int month = 6;
     int endYear = 1;
     int endMonth = 1;
@@ -99,6 +99,7 @@ public class StockTest {
 
 
         in.dingTouMultiYear(year, month, money, 0.2f, 3, 0.1f, true);
+        in.dingTouMultiYear(year, month, money, 0.2f, 3, 0.1f, false);
 //        in.dingTou(year, month, money, 0.25f, 3);
 
 
