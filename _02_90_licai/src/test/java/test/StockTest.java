@@ -1,5 +1,8 @@
 package test;
 
+import com.bean.BuyGridOp;
+import com.bean.Op;
+import com.bean.SellerGridOp;
 import com.dao.StockDao;
 import com.service.StockService;
 import org.junit.After;
@@ -7,6 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 目前来说最优方案是，每3个月定投一次。 大概：
@@ -53,9 +58,14 @@ public class StockTest {
 
 
         System.out.println("2222222");
-        in.dingTou(year, month, money, 10f);
-        in.dingTou(year, month, money, 1f);
-        in.dingTou(year, month, money, 0.3f);
+//        in.dingTou(year, month, money, 3f, 1, 0.5f);
+//        in.dingTou(year, month, money, 1f, 1, 0.5f);
+//        in.dingTou(year, month, money, 0.3f, 1, 0.5f);
+        in.dingTou(year, month, money, 100f, 1, 1f, "/wanke");
+        in.dingTou(year, month, money, 10f, 1, 1f, "/wanke");
+        in.dingTou(year, month, money, 3f, 1, 1f, "/wanke");
+        in.dingTou(year, month, money, 1f, 1, 1f, "/wanke");
+        in.dingTou(year, month, money, 0.3f, 1, 1f, "/wanke");
 
         System.out.println("3333333");
 //        in.dingTou(year, month, money, 0.15f);
@@ -188,5 +198,25 @@ public class StockTest {
     @Test
     public void testDingTouEnd(){
         in.dingTouEnd(2018, 6, money, 0.15f, 3);
+    }
+
+
+
+
+    @Test
+    public void testH333End(){
+        ArrayList<Op> a = new ArrayList<Op>();
+
+        a.add(new BuyGridOp(0.25f, 0.1f, 20000, false));
+        a.add(new BuyGridOp(0.5f, 0.1f, 30000, false));
+        a.add(new BuyGridOp(0.75f, 0.1f, 30000, false));
+        a.add(new BuyGridOp(1f, 0.1f, 20000, false));
+
+        a.add(new SellerGridOp(0.8f, 0.25f, 50000, false));
+        a.add(new SellerGridOp(0.6f, 0.25f, 0000, false));
+        a.add(new SellerGridOp(0.4f, 0.1f, 10000, false));
+
+        in.h333_end(2008, 6, 2015, 7, 0, 4, a);
+
     }
 }

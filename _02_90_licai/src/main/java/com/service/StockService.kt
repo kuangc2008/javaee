@@ -1,5 +1,6 @@
 package com.service
 
+import com.bean.Op
 import com.bean.Trade
 import com.dao.StockDao
 
@@ -8,8 +9,8 @@ class StockService {
     val dao = StockDao();
 
     @JvmOverloads
-    fun dingTou(startYear : Int , startMonth : Int, monkey : Int, rationRemove: Float, monthGap : Int = 1) {
-        val allStockNum = dao.getAllStockNum()
+    fun dingTou(startYear : Int , startMonth : Int, monkey : Int, rationRemove: Float, monthGap : Int = 1, removeFloat : Float = 1f, code : String = "") {
+        val allStockNum = dao.getAllStockNum(code)
 
         val monkey2 = monkey * monthGap
         var trade = Trade()
@@ -31,8 +32,8 @@ class StockService {
                 skip = 0
 
                 if ( (trade.getTotalStock() * day.startPrice) * 1.0 /  trade.getTotalMoney() >= (1 + rationRemove)) {
-
-                    trade.addOp(Trade.TradeTime(false, (trade.getTotalStock() * day.startPrice).toInt(), trade.getTotalStock(), day.getDayStr(),  day.startPrice))
+                    val count : Int = (trade.getTotalStock() * removeFloat).toInt()
+                    trade.addOp(Trade.TradeTime(false, (count * day.startPrice).toInt(), count, day.getDayStr(),  day.startPrice))
                     continue
                 }
 
@@ -413,6 +414,23 @@ class StockService {
 
         priceEnd = if (priceEnd > 0) priceEnd else allStockNum.last().startPrice
         trade.print(priceEnd)
+
+    }
+
+
+    /**
+     * 程序网格；  上涨与下跌是根据，投入值或者变动的值。 是否间隔月份 （0的话不讲个）
+     * 设计：总共n个格子
+     *
+     * 1. 当指数下跌x(10%)， 投入y格子
+     *  2. 位于这个格子，当指数继续下跌x(8%), 投入 y 格子
+     *      3. 位于这个格子，当指数继续下跌x(8%), 投入 y 格子
+     *  2. 位于这个格子，当指数上涨x(10%)， 取出y格子
+     *
+     */
+
+    fun h333_end(startYear : Int , startMonth : Int, endYear : Int , endMonth : Int, money : Int,  monthGap : Int, op : List<Op>) {
+
 
     }
 }

@@ -40,9 +40,14 @@ class Trade {
 
 
         } else {
+
+            val perPrice = totalUseMonkey * 1.0/ stock;
+
+            tradeTime.result = tradeTime.monkey - (perPrice * tradeTime.stockNum).toInt();
             stock -= tradeTime.stockNum
-            tradeTime.result = ( tradeTime.monkey - totalUseMonkey)
-            totalUseMonkey = 0
+
+            totalUseMonkey = (tradeTime.price * stock).toInt()
+//            totalUseMonkey -=  (perPrice * tradeTime.stockNum).toInt();
             size = 0
         }
     }

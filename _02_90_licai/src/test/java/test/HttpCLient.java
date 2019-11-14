@@ -33,7 +33,7 @@ public class HttpCLient {
 //        // 数据传输时间
 //        httpClient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, soTimeout);
         // Get请求
-        HttpGet httpget = new HttpGet("https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol=SH510500&begin=1072800000000&end=1573653130085&period=day&type=before&indicator=kline");
+        HttpGet httpget = new HttpGet("https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol=SZ000002&begin=1072800000000&end=1573653130085&period=day&type=before&indicator=kline");
         try
         {
             // for version 4.3+ 设置请求和传输超时时间

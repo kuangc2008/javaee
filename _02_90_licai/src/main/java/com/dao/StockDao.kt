@@ -11,8 +11,9 @@ import java.util.*
 
 class StockDao {
 
-    fun getAllStockNum() : ArrayList<StockDay> {
-        val data: String = FileUtils.getFromFile("/500etf")
+    fun getAllStockNum(file : String = "/wanke") : ArrayList<StockDay> {
+
+        val data: String = FileUtils.getFromFile(  if (file.isEmpty()) "/wanke" else file)
 
 
         val jsonObject = JSONObject(data)
