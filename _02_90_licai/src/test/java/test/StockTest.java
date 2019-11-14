@@ -26,8 +26,8 @@ public class StockTest {
 
     private StockService in = new StockService();
 
-    int year = 2001;
-    int month = 1;
+    int year = 2016;
+    int month = 11;
     int endYear = 1;
     int endMonth = 1;
     int money = 10000;
@@ -61,11 +61,12 @@ public class StockTest {
 //        in.dingTou(year, month, money, 3f, 1, 0.5f);
 //        in.dingTou(year, month, money, 1f, 1, 0.5f);
 //        in.dingTou(year, month, money, 0.3f, 1, 0.5f);
-        in.dingTou(year, month, money, 100f, 1, 1f, "/wanke");
-        in.dingTou(year, month, money, 10f, 1, 1f, "/wanke");
-        in.dingTou(year, month, money, 3f, 1, 1f, "/wanke");
-        in.dingTou(year, month, money, 1f, 1, 1f, "/wanke");
-        in.dingTou(year, month, money, 0.3f, 1, 1f, "/wanke");
+        in.dingTou(year, month, money, 100f, 1, 1f, "/500etf");
+        in.dingTou(year, month, money, 10f, 1, 1f, "/500etf");
+        in.dingTou(year, month, money, 3f, 1, 1f, "/500etf");
+        in.dingTou(year, month, money, 1f, 1, 1f, "/500etf");
+        in.dingTou(year, month, money, 0.3f, 1, 1f, "/500etf");
+        in.dingTou(year, month, money, 0.1f, 1, 1f, "/500etf");
 
         System.out.println("3333333");
 //        in.dingTou(year, month, money, 0.15f);

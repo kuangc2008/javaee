@@ -427,6 +427,17 @@ class StockService {
      *      3. 位于这个格子，当指数继续下跌x(8%), 投入 y 格子
      *  2. 位于这个格子，当指数上涨x(10%)， 取出y格子
      *
+     *
+     *
+     * 总资金100万，然后分成24期定投；   如果收益目标达到，按计划取出部分钱；  取出的钱，按照4%的收益计算！
+     *     最终计算出整个收益率是多少！
+     *
+     * 1， 按照计算，定投就行。 或者大幅度回调的时候 （对最终收益影响有限）
+     * 2.  翻倍的时候，讲钱取出
+     *
+     *
+     *
+     *
      */
 
     fun h333_end(startYear : Int , startMonth : Int, endYear : Int , endMonth : Int, money : Int,  monthGap : Int, op : List<Op>) {
