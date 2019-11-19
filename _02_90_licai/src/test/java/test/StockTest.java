@@ -26,8 +26,8 @@ public class StockTest {
 
     private StockService in = new StockService();
 
-    int year = 2016;
-    int month = 11;
+    int year = 2018;
+    int month = 2;
     int endYear = 1;
     int endMonth = 1;
     int money = 10000;
@@ -61,12 +61,12 @@ public class StockTest {
 //        in.dingTou(year, month, money, 3f, 1, 0.5f);
 //        in.dingTou(year, month, money, 1f, 1, 0.5f);
 //        in.dingTou(year, month, money, 0.3f, 1, 0.5f);
-        in.dingTou(year, month, money, 100f, 1, 1f, "/500etf");
-        in.dingTou(year, month, money, 10f, 1, 1f, "/500etf");
-        in.dingTou(year, month, money, 3f, 1, 1f, "/500etf");
-        in.dingTou(year, month, money, 1f, 1, 1f, "/500etf");
-        in.dingTou(year, month, money, 0.3f, 1, 1f, "/500etf");
-        in.dingTou(year, month, money, 0.1f, 1, 1f, "/500etf");
+//        in.dingTou(year, month, money, 100f, 3, 1f, "/500etf");
+//        in.dingTou(year, month, money, 10f, 3, 1f, "/500etf");
+//        in.dingTou(year, month, money, 3f, 3, 1f, "/500etf");
+//        in.dingTou(year, month, money, 1f, 3, 1f, "/50etf");
+        in.dingTou(year, month, money, 0.3f, 3, 1f, "/50etf");
+        in.dingTou(year, month, money, 0.3f, 1, 1f, "/50etf");
 
         System.out.println("3333333");
 //        in.dingTou(year, month, money, 0.15f);
@@ -117,16 +117,24 @@ public class StockTest {
 
 //        in.dingTouMultiYear(year, month, money, 1f, 3, 0.1f, true);
 //        in.dingTouMultiYear(year, month, money, 0.5f, 3, 0.1f, true);
-        in.dingTouMultiYear(year, month, money, 0.5f, 3, 0.1f, true);
+
+        /**
+         * 如果从下走，3个月一次的话，能减少亏损
+         *
+         * 对于万科也是一样的啦.  回撤10%就定投是比较好的.
+         */
+        in.dingTouMultiYear(year, month, money, 0.5f, 4, 0.15f, false);
         in.dingTou(year, month, money, 0.5f);
 
 
-
-        in.dingTouMultiYear(year, month, money, 0.3f, 3, 0.1f, true);
+        /*
+        in.dingTouMultiYear(year, month, money, 0.3f, 3, 0.12f, true);
         in.dingTou(year, month, money, 0.3f);
 
-        in.dingTouMultiYear(year, month, money, 0.15f, 3, 0.1f, true);
+        in.dingTouMultiYear(year, month, money, 0.15f, 3, 0.12f, true);
         in.dingTou(year, month, money, 0.15f);
+        */
+
 //        in.dingTouMultiYear(year, month, money, 0.2f, 3, 0.1f, true);
 //        in.dingTouMultiYear(year, month, money, 0.15f, 3, 0.1f, true);
 //        in.dingTouMultiYear(year, month, money, 0.3f, 3, 0.1f, false);
