@@ -69,14 +69,14 @@ class HangYeTest : PageProcessor {
 //        spider.addUrl("http://reportapi.eastmoney.com/report/predic?cb=datatable3410691&dyCode=*&pageNo=1&pageSize=5&fields=&beginTime=2017-11-20&endTime=2019-11-20&hyCode=451&gnCode=*&marketCode=*&sort=count%2Cdesc&_=1574230746531")
 
 //         家电
-//        spider.addUrl("http://reportapi.eastmoney.com/report/predic?cb=datatable2457615&dyCode=*&pageNo=1&pageSize=5fields=&beginTime=2017-11-20&endTime=2019-11-20&hyCode=456&gnCode=*&marketCode=*&sort=count%2Cdesc&_=1574231332102")
+        spider.addUrl("http://reportapi.eastmoney.com/report/predic?cb=datatable2457615&dyCode=*&pageNo=1&pageSize=20&fields=&beginTime=2017-11-20&endTime=2019-11-20&hyCode=456&gnCode=*&marketCode=*&sort=count%2Cdesc&_=1574231332102")
 
         // 银行
 //        spider.addUrl("http://reportapi.eastmoney.com/report/predic?cb=datatable4074277&dyCode=*&pageNo=1&pageSize=5&fields=&beginTime=2017-11-20&endTime=2019-11-20&hyCode=475&gnCode=*&marketCode=*&sort=count%2Cdesc&_=1574232817188")
 
 
         // 食品
-        spider.addUrl("http://reportapi.eastmoney.com/report/predic?cb=datatable5420439&dyCode=*&pageNo=1&pageSize=5&fields=&beginTime=2017-11-20&endTime=2019-11-20&hyCode=438&gnCode=*&marketCode=*&sort=count%2Cdesc&_=1574232817191")
+//        spider.addUrl("http://reportapi.eastmoney.com/report/predic?cb=datatable5420439&dyCode=*&pageNo=1&pageSize=5&fields=&beginTime=2017-11-20&endTime=2019-11-20&hyCode=438&gnCode=*&marketCode=*&sort=count%2Cdesc&_=1574232817191")
 
 
         spider.run()
