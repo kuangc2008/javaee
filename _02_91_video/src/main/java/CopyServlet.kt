@@ -13,6 +13,7 @@ class CopyServlet : HttpServlet() {
     }
 
     override fun doPost(req: HttpServletRequest?, resp: HttpServletResponse?) {
-        super.doPost(req, resp)
+//        super.doPost(req, resp)
+        resp?.getWriter()?.write("CopyServlet")
     }
 }
