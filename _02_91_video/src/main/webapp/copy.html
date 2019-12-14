@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>copy</title>
+
+</head>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    console.log("fdasfa");
+</script>
+
+<script type="text/javascript" >
+
+    console.log("asfafsdf");
+    $( document ).ready(function() {
+        console.log("aaa");
+        $.ajax({
+            method: "GET",
+            url: "/getText",
+        })
+            .done(function( msg ) {
+                console.log("msg2222->" + msg);
+                $('#aaa').val(msg);
+            });
+        // $('#aaa').change(function () {
+        // 	console.log("sdafsafasfds");
+        //   });
+        $('#aaa').bind('input propertychange', function() {
+            console.log(this.value);
+            $.ajax({
+                method: "POST",
+                url: "/sendtext",
+                data: {
+                    text: $('#aaa').val(),
+                    aaa: "bbb"
+                },
+            })
+                .done(function( msg ) {
+                    // console.log("msg2222->" + msg);
+
+                });
+        });
+    });
+</script>
+
+
+<body>
+
+
+
+<h1> 赋值  </h1>
+<form action="/dopost" method="post" enctype="multipart/form-data" id="FORM">
+    <input type="submit" name="sync"/>  <br>
+    <textarea  name="text"   rows="200" cols="200" id="aaa"></textarea>
+</form>
+
+
+
+
+</html>
