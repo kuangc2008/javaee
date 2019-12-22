@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+
+<script type="text/javascript" >
+
+    $( document ).ready(function() {
+
+        $.ajax({
+            method: "GET",
+            url: "/video_list",
+        })
+            .done(function( msg ) {
+                console.log("msg2222->" + msg);
+                $('#aaa').val(msg);
+            });
+    });
+</script>
+
+
+<body>
+
+
+
+<h1> 赋值  </h1>
+<div id="first">
+
+    <a href="#">fafa</a>
+
+</div>
+
+
+
+
+</body>
+</html>
