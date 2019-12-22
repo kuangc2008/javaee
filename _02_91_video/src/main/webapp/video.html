@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>copy</title>
+
+</head>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+
+<script type="text/javascript" >
+
+
+    $( document ).ready(function() {
+        console.log("2222");
+
+        var path = getCookie("name");
+
+        console.log("path->" + path)
+
+        // var path = '/Users/kuangcheng/Music/031016_516-caribpr-high.mp4';
+        $("video").append('<source id="path" src="' + path + '">')    // 服务器的相对路径
+    });
+
+
+
+    function getCookie(cname)
+    {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++)
+        {
+            var c = ca[i].trim();
+            if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+</script>
+
+
+<body>
+
+
+
+<video width="100%" height="100%" controls="controls">
+
+</video>
+
+
+</body>
+
+
+
+
+</html>

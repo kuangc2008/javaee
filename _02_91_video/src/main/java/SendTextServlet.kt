@@ -17,10 +17,9 @@ class SendTextServlet : HttpServlet() {
     override fun doPost(req: HttpServletRequest?, resp: HttpServletResponse?) {
 //        super.doPost(req, resp)
 
-
-        if ("/sendtext".equals(req?.servletPath)) {
+        if ( "/sendtext" in req!!.servletPath) {
             text = req?.getParameter("text")
-        } else if ("/getText".equals(req?.servletPath)) {
+        } else if ("/getText" in req!!.servletPath) {
             if (text != null) {
                 resp?.contentType = "text/text;  charset=utf8"
                 resp?.writer?.write(text)
