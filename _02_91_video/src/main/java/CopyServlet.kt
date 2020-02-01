@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 
-@WebServlet("/copy")
+@WebServlet("/copy2")
 class CopyServlet : HttpServlet() {
 
     override fun doGet(req: HttpServletRequest?, resp: HttpServletResponse?) {
