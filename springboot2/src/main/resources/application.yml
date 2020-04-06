@@ -10,8 +10,25 @@ spring:
     password: rootroot
     driver-class-name: com.mysql.jdbc.Driver
 
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+  devtools:
+    livereload:
+      port: 25730
+
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
 
 mybatis:
   type-aliases-package: com.k.bean
   mapper-locations: classpath:mapper/*Mapper.xml
+
+
+server:
+  port: 8080
 

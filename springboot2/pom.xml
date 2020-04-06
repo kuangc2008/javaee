@@ -9,6 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.k</groupId>
+    <!--<packaging>war</packaging>-->
     <artifactId>springboot2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot2</name>
@@ -58,6 +59,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- 配置使用redis启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
 
 
         <dependency>
@@ -77,6 +84,43 @@
             <version>4.13-rc-1</version>
             <scope>test</scope>
         </dependency>
+
+
+
+        <!--&lt;!&ndash; jsp start &ndash;&gt;-->
+        <!--&lt;!&ndash;配置servlet&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>javax.servlet-api</artifactId>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;配置jsp jstl的支持&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>jstl</artifactId>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;添加对tomcat的支持&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;对jsp的支持&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat.embed</groupId>-->
+            <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; jsp end &ndash;&gt;-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>
