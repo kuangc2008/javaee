@@ -1,7 +1,7 @@
 package com.kc._200_springboot3.readinglist;
 
 import org.springframework.core.MethodParameter;
-import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -17,13 +17,16 @@ public class ReaderHandlerMethodArgumentResolver implements HandlerMethodArgumen
   }
 
   @Override
-  public Object resolveArgument(MethodParameter parameter,
-      ModelAndViewContainer mavContainer, NativeWebRequest webRequest,
-      WebDataBinderFactory binderFactory) throws Exception {
-
-    Authentication auth = (Authentication) webRequest.getUserPrincipal();
-    return auth != null && auth.getPrincipal() instanceof Reader ? auth.getPrincipal() : null;
-    
+  public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+    return null;
   }
+//
+//  @Override
+//  public Object resolveArgument(MethodParameter parameter,
+//      ModelAndViewContainer mavContainer, NativeWebRequest webRequest,
+//      WebDataBinderFactory binderFactory) throws Exception {
+//    Authentication auth = (Authentication) webRequest.getUserPrincipal();
+//    return auth != null && auth.getPrincipal() instanceof Reader ? auth.getPrincipal() : null;
+//  }
 
 }

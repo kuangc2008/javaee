@@ -22,7 +22,7 @@ public class Application implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 //        registry.addRedirectViewController("/", "/readingList");
 
-        registry.addViewController("/login").setViewName("login");
+//        registry.addViewController("/login").setViewName("login");
     }
 
     @Override

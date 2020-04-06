@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
-@RequestMapping("/")
+//@RequestMapping("/")
 @ConfigurationProperties("amazon")
 public class ReadingListController {
 
@@ -27,10 +27,10 @@ public class ReadingListController {
     this.amazonConfig = amazonConfig;
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/fail")
-	public void fail() {
-	  throw new RuntimeException();
-	}
+//	@RequestMapping(method=RequestMethod.GET, value="/fail")
+//	public void fail() {
+//	  throw new RuntimeException();
+//	}
 	
 	@ExceptionHandler(value=RuntimeException.class)
 	@ResponseStatus(value=HttpStatus.BANDWIDTH_LIMIT_EXCEEDED)
@@ -39,7 +39,7 @@ public class ReadingListController {
 	}
 	
 	
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping("/abc")
 	public String readersBooks(Reader reader, Model model) {
 		System.out.println("1111->" + "  reader->" + (reader == null ? "Null" : reader));
 
@@ -52,7 +52,7 @@ public class ReadingListController {
 		return "readingList";
 	}
 	
-	@RequestMapping(method=RequestMethod.POST)
+//	@RequestMapping(method=RequestMethod.POST)
 	public String addToReadingList(Reader reader, Book book) {
 		book.setReader(reader);
 		readingListRepository.save(book);
